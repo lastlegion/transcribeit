@@ -5,6 +5,9 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res){
   res.sendfile(__dirname + '/index.html');
 });
+app.get('/chrome.min.js', function(req,res){
+    res.sendfile(__dirname+'/chrome.min.js');
+})
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
